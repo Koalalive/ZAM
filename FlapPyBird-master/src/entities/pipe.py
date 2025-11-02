@@ -95,13 +95,13 @@ class Pipes(Entity):
             pipe_x,
             gap_y - pipe_height,
         )
-        random.seed(int(time()*100))
+        random.seed(int(time()*1000))
 
         lower_pipe = Pipe(
             self.config,
             self.config.images.pipe[1],
             pipe_x,
-            gap_y + random.uniform(120, 360),
+            gap_y + random.uniform(120, 720),
         )
 
         return upper_pipe, lower_pipe

@@ -20,7 +20,9 @@ from .utils import GameConfig, Images, Sounds, Window
 class Flappy:
     def __init__(self):
         pygame.init()
-        pygame.display.set_caption("Flappy Bird")
+        pygame.display.set_caption("ZAM")
+        pygame.mixer.music.load("assets/audio/BGM.mp3") 
+        pygame.mixer.music.play(-1)  # -1 表示无限循环播放
         window = Window(1920, 1080)
         screen = pygame.display.set_mode((window.width, window.height))
         images = Images()
