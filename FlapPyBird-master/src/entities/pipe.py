@@ -1,4 +1,5 @@
 import random
+from time import time
 from typing import List
 
 from ..utils import GameConfig
@@ -21,7 +22,8 @@ class Pipes(Entity):
 
     def __init__(self, config: GameConfig) -> None:
         super().__init__(config)
-        self.pipe_gap = 120
+        random.seed(int(time()*100))
+        self.pipe_gap = random.uniform(160, 240)
         self.top = 0
         self.bottom = self.config.window.viewport_height
         self.upper = []
@@ -93,12 +95,13 @@ class Pipes(Entity):
             pipe_x,
             gap_y - pipe_height,
         )
+        random.seed(int(time()*100))
 
         lower_pipe = Pipe(
             self.config,
             self.config.images.pipe[1],
             pipe_x,
-            gap_y + self.pipe_gap,
+            gap_y + random.uniform(120, 360),
         )
 
         return upper_pipe, lower_pipe
