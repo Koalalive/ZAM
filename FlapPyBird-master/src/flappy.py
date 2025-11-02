@@ -21,14 +21,13 @@ class Flappy:
     def __init__(self):
         pygame.init()
         pygame.display.set_caption("Flappy Bird")
-        window = Window(288, 512)
+        window = Window(1920, 1080)
         screen = pygame.display.set_mode((window.width, window.height))
         images = Images()
-
         self.config = GameConfig(
             screen=screen,
             clock=pygame.time.Clock(),
-            fps=30,
+            fps=100,
             window=window,
             images=images,
             sounds=Sounds(),
