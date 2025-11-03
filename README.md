@@ -110,6 +110,16 @@ The game features an incredible soundtrack inspired by **Junk Jack X.**
 - **Multiple difficulty settings** for all player types
 - **Cross-platform compatibility**
 
+## 😀StarTravel !!!
+
+**Download** and **install** with terminal.
+
+```bash
+git clone https://github.com/Koalalive/ZAM.git
+chmod +x ./setup.sh
+./setup.sh
+```
+
 ---
 
 *"In the vast emptiness of space, one small cat's meow can echo through eternity."*

@@ -8,6 +8,26 @@ from .entity import Entity
 from .floor import Floor
 from .pipe import Pipe, Pipes
 
+import numpy as np
+from time import time
+
+np.random.seed(int(time()))
+
+def bounded_ZAM_random_walk(current_value, mu=0, sigma=0.01, lower_bound=0.4, upper_bound=1.5):
+    step = np.sqrt(abs(np.random.normal(mu, sigma))) * np.random.choice([-1, 1])
+    new_value = current_value + step
+    new_value = max(lower_bound, min(upper_bound, new_value))
+    return new_value
+
+initial_value = np.random.uniform(0.4, 1.5)
+sequence = [initial_value]
+current_value = initial_value
+
+for i in range(158 * 10):  # 总共159个元素
+    current_value = bounded_ZAM_random_walk(current_value)
+    sequence.append(current_value)
+
+
 
 class PlayerMode(Enum):
     SHM = "SHM"
@@ -48,7 +68,7 @@ class Player(Entity):
         self.vel_y = -9  # player's velocity along Y axis
         self.max_vel_y = 10  # max vel along Y, max descend speed
         self.min_vel_y = -8  # min vel along Y, max ascend speed
-        self.acc_y = 1  # players downward acceleration
+        self.acc_y = sequence[int(time()) % len(sequence)]  # players downward acceleration 0.4-1.5
 
         self.rot = 80  # player's current rotation
         self.vel_rot = -3  # player's rotation speed

@@ -101,7 +101,7 @@ class Pipes(Entity):
             self.config,
             self.config.images.pipe[1],
             pipe_x,
-            gap_y + random.uniform(120, 720),
+            gap_y + random.uniform(180, 720),
         )
 
         return upper_pipe, lower_pipe
