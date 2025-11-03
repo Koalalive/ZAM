@@ -116,6 +116,7 @@ The game features an incredible soundtrack inspired by **Junk Jack X.**
 
 ```bash
 git clone https://github.com/Koalalive/ZAM.git
+cd ./ZAM
 chmod +x ./setup.sh
 ./setup.sh
 ```
